@@ -1,4 +1,5 @@
-function hello(name) {
-  console.log(`Hello ${name}`); // eslint-disable-line
+export default class Hello {
+  world() {
+    console.log('Hello World');
+  }
 }
-hello('JS World');

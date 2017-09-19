@@ -1,10 +1,10 @@
 {
-  "name": "babel-starter-kit",
+  "name": "antimerge",
   "version": "0.0.1",
-  "description": "The starter kit for writing next generation JavaScript Libraries.",
+  "description": "Diffirence operation for deep merge.",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/isuvorov/babel-starter-kit.git"
+    "url": "git+ssh://git@github.com/isuvorov/antimerge.git"
   },
   "contributors": [
     "Igor Suvorov <hi@isuvorov.ru> (http://isuvorov.ru)"

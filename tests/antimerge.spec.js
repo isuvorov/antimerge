@@ -4,8 +4,9 @@ import deepmerge from 'deepmerge';
 import antimerge from '../src/index';
 
 describe('antimerge set', () => {
+  const testcasesImmutable = require('./testcases/antimerge').default;
   describe('antimerge testes with manual result', () => {
-    const testcases = require('./testcases/antimerge').default;
+    const testcases = _.cloneDeep(testcasesImmutable);
     testcases.forEach((test) => {
       it(`should return ${JSON.stringify(test[2])}`, () => {
         expect(antimerge(test[0], test[1])).toEqual(test[2]);
@@ -14,7 +15,7 @@ describe('antimerge set', () => {
   });
 
   describe('antimerge testes with Object.assign', () => {
-    const testcases = require('./testcases/antimerge').default;
+    const testcases = _.cloneDeep(testcasesImmutable);
     testcases.forEach((test) => {
       it(`should return ${JSON.stringify(test[2])}`, () => {
         const result = antimerge(test[0], test[1]);
@@ -30,7 +31,7 @@ describe('antimerge set', () => {
   });
 
   describe('antimerge testes with deepmerge', () => {
-    const testcases = require('./testcases/antimerge').default;
+    const testcases = _.cloneDeep(testcasesImmutable);
     testcases.forEach((test) => {
       it(`should return ${JSON.stringify(test[2])}`, () => {
         const result = antimerge(test[0], test[1]);

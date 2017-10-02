@@ -323,4 +323,34 @@ const testcases = [
   ],
 ];
 
+export const deepTestcases = [
+  [
+    {
+      a: {
+        a: 1,
+        b: 4,
+      },
+      b: 3,
+      c: 2,
+    },
+    {
+      a: {
+        a: 2,
+        c: 3,
+      },
+      b: 2,
+      c: 1,
+    },
+    {
+      a: {
+        a: 1,
+        b: 4,
+        c: undefined,
+      },
+      b: 3,
+      c: 2,
+    },
+  ],
+];
+
 export default testcases;

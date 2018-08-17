@@ -1,13 +1,14 @@
 {
   "name": "antimerge",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Diffirence operation for deep merge.",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/isuvorov/antimerge.git"
   },
   "contributors": [
-    "Igor Suvorov <hi@isuvorov.ru> (http://isuvorov.ru)"
+    "Igor Suvorov <hi@isuvorov.com> (https://isuvorov.com)",
+    "Nata <natavts@gmail.com> (https://natavts.ru)"
   ],
   "license": "MIT",
   "bugs": {
@@ -22,27 +23,23 @@
     "test": "jest --config jest.config.json"
   },
   "dependencies": {
-    "classnames": "^2.2.3",
-    "lodash": "^4.17.4"
-  },
-  "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0"
+    "lodash": "4.17.10"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.24.0",
+    "babel-cli": "6.24.0",
+    "babel-core": "6.24.0",
     "babel-eslint": "7.1.1",
-    "babel-plugin-transform-inline-environment-variables": "^0.0.2",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-stage-2": "^6.22.0",
-    "deepmerge": "^1.5.2",
+    "babel-plugin-transform-inline-environment-variables": "0.0.2",
+    "babel-preset-es2015": "6.24.0",
+    "babel-preset-stage-2": "6.22.0",
+    "deepmerge": "1.5.2",
     "eslint": "3.14.0",
     "eslint-config-airbnb": "14.0.0",
     "eslint-config-airbnb-base": "11.1.0",
-    "eslint-loader": "^1.6.3",
+    "eslint-loader": "1.6.3",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "3.0.2",
     "eslint-plugin-react": "6.9.0",
-    "jest": "^21.1.0"
+    "jest": "21.1.0"
   }
 }

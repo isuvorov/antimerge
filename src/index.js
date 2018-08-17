@@ -1,41 +1,22 @@
-import _ from 'lodash';
+import isObject from 'lodash/isObject';
+import isEqual from 'lodash/isEqual';
+import differenceWith from 'lodash/differenceWith';
 
-export const antimerge = (a, b) => {
-  if (!_.isObject(a)) return null;
-  if (!_.isObject(b)) return null;
+const antimerge = (a, b) => {
+  if (!isObject(a)) return null;
+  if (!isObject(b)) return null;
   const res = {};
   for (const k in a) {
-    if ({}.hasOwnProperty.call(a, k)) {
-      if (!_.isEqual(a[k], b[k])) {
-        res[k] = a[k];
-      }
+    if (Object.prototype.hasOwnProperty.call(a, k)) {
+      if (isEqual(a[k], b[k])) continue;  // eslint-disable-line no-continue
+      res[k] = a[k];
     }
   }
-  const diff = _.differenceWith(Object.keys(b), Object.keys(a), _.isEqual);
+  const diff = differenceWith(Object.keys(b), Object.keys(a), isEqual);
   diff.forEach((d) => {
     res[d] = undefined;
   });
   return res;
 };
 
-export const antimergeDeep = (a, b) => {
-  if (!_.isObject(a)) return null;
-  if (!_.isObject(b)) return null;
-  const res = {};
-  for (const k in a) {
-    if ({}.hasOwnProperty.call(a, k)) {
-      if (!_.isEqual(a[k], b[k])) {
-        if (_.isObject(a[k]) && _.isObject(b[k])) {
-          res[k] = antimergeDeep(a[k], b[k]);
-        } else {
-          res[k] = a[k];
-        }
-      }
-    }
-  }
-  const diff = _.differenceWith(Object.keys(b), Object.keys(a), _.isEqual);
-  diff.forEach((d) => {
-    res[d] = undefined;
-  });
-  return res;
-};
+export default antimerge;
